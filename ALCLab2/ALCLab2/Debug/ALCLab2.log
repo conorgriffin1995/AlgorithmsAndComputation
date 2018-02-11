@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\college\4thyear\semester8\alc\alclab2\alclab2\source.cpp(13): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\college\4thyear\semester8\alc\alclab2\alclab2\source.cpp(25): warning C4305: 'initializing': truncation from 'double' to 'float'
+  ALCLab2.vcxproj -> C:\College\4thYear\Semester8\ALC\ALCLab2\Debug\ALCLab2.exe
