@@ -1,24 +1,5 @@
 #include "MergeSort.h"
 
-
-// I got some of the code referenced from: https://stackoverflow.com/questions/37121452/merge-sort-algorithm-merge-function-does-not-work
-void MergeSort::
-mergeSort(int arrayToSort[], int startIndex, int lengthToSort) {
-	int midIndex = 0;			// pivot, central value
-
-	// check for base case
-	if (startIndex >= lengthToSort) {
-		return;
-	}
-		
-	midIndex = (startIndex + lengthToSort) / 2;				// split array into 2 halves
-	mergeSort(arrayToSort, startIndex, midIndex);			// recursively call method to sort first half
-	mergeSort(arrayToSort, midIndex + 1, lengthToSort);	// recursively call method to sort second half
-	merge(arrayToSort, startIndex, lengthToSort);			// merge back together
-	
-
-}
-
 // merge contents of array which has been divoided into 2 halves
 // from startIndex to length/2 and from startIndex + length/2 until the full sorted length
 void MergeSort::
@@ -49,4 +30,25 @@ merge(int arraySortedInTwoHalves[], int startIndex, int length) {
 	}
 	delete[]temp;	// delete temp array
 
+}
+
+
+/* startIndex is for left index and r is right index of the
+sub-array of arr to be sorted */
+void MergeSort::
+mergeSort(int arrayToSort[], int startIndex, int lengthToSort) {
+	int midIndex;			// pivot, central value
+
+								// check for base case
+	if (startIndex >= lengthToSort) {
+		return;
+	}
+
+	// first divide in half
+	midIndex = (startIndex + lengthToSort) / 2;				// split array into 2 halves
+	mergeSort(arrayToSort, startIndex, midIndex);			// recursively call method to sort first half
+	mergeSort(arrayToSort, midIndex + 1, lengthToSort);		// recursively call method to sort second half
+	merge(arrayToSort, startIndex, lengthToSort);			// merge back together
+	
+	
 }

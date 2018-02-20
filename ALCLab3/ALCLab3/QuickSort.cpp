@@ -1,7 +1,5 @@
 #include "QuickSort.h"
 
-
-
 void QuickSort::
 quickSortDivide(int theArray[], int first, int last) {
 	int i = first, j = last;
@@ -9,14 +7,12 @@ quickSortDivide(int theArray[], int first, int last) {
 
 	int pivot = theArray[(first + last) / 2];
 
-	// Divide
+	// partition
 	while (i <= j) {
-		while (theArray[i] < pivot) {
-			i++;
-		}
-		while (theArray[j] > pivot) {
-			j--;
-		}
+		while (theArray[i] < pivot)
+			i++;	
+		while (theArray[j] > pivot)
+			j--;		
 		if (i <= j) {
 			temp = theArray[i];
 			theArray[i] = theArray[j];
@@ -26,13 +22,12 @@ quickSortDivide(int theArray[], int first, int last) {
 		}
 	};
 
-	// Recursive call
-	if (first < j) {
+	// recursion
+	if (first < j)
 		quickSortDivide(theArray, first, j);
-	}
-	if (i < last) {
+	if (i < last)
 		quickSortDivide(theArray, i, last);
-	}
 
 }
+
 

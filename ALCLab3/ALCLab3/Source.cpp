@@ -9,7 +9,7 @@ int main() {
 	cout << "*** MERGE SORT ***\n" << endl;
 	MergeSort ms;		// create mergesort object
 	const int SIZE = 10;
-	int array[SIZE] = { 1,5,6,4,7,2,8,3,9,10 };
+	int array[SIZE] = { 1,5,6,4,7,2,8,3,4,10 };
 	cout << "*** ARRAY ***" << endl;
 	for (int i = 0; i < SIZE; i++) {
 		cout << array[i] << " ";
@@ -23,27 +23,22 @@ int main() {
 	}
 
 	// Quick Sort.)
-	cout << "\n\n\nQUICK SORT: \n" << endl;
+	cout << "\n\n\n*** QUICK SORT ***\n" << endl;
 
 	QuickSort qs; // Create QuickSort Object.
-
-	int myArray2[10] = { 2,5,6,4,7,2,8,3,9,10 }; // Creating array of ints.
+	const int SIZE2 = 10;
+	int myArray2[SIZE2] = { 2,5,6,4,7,2,8,3,1,10 }; // Creating array of ints.
 
 												 // Print the non-sorted array
-	cout << "PRINTING NON-SORTED ARRAY:" << endl;
-	for (int i = 0; i < 10; i++)
-	{
+	cout << "*** ARRAY ***" << endl;
+	for (int i = 0; i < 10; i++) {
 		cout << myArray2[i] << " ";
 	}
 
 	// Sorting array now.
-	cout << "\n\nQUICK-SORTING ARRAY NOW..." << endl;
-	qs.quickSortDivide(myArray2, 0, 9);
-
-	// Print the sorted array
-	cout << "\nPRINTING SORTED ARRAY:" << endl;
-	for (int i = 0; i < 10; i++)
-	{
+	cout << "\n\n*** QUICK-SORTING ARRAY ***" << endl;
+	qs.quickSortDivide(myArray2, 0, SIZE2 - 1);
+	for (int i = 0; i < 10; i++) {
 		cout << myArray2[i] << " ";
 	}
 	
