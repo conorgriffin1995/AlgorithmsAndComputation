@@ -29,7 +29,7 @@ int main() {
 	const int SIZE2 = 10;
 	int myArray2[SIZE2] = { 2,5,6,4,7,2,8,3,1,10 }; // Creating array of ints.
 
-												 // Print the non-sorted array
+	// Print the non-sorted array
 	cout << "*** ARRAY ***" << endl;
 	for (int i = 0; i < 10; i++) {
 		cout << myArray2[i] << " ";
@@ -37,7 +37,7 @@ int main() {
 
 	// Sorting array now.
 	cout << "\n\n*** QUICK-SORTING ARRAY ***" << endl;
-	qs.quickSortDivide(myArray2, 0, SIZE2 - 1);
+	qs.quickSort(myArray2, 0, SIZE2 - 1);
 	for (int i = 0; i < 10; i++) {
 		cout << myArray2[i] << " ";
 	}
