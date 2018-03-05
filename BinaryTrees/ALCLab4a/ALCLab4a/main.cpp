@@ -10,6 +10,11 @@ int main() {
 	tree.add('b');
 	tree.add('d');
 	tree.add('e');
+	tree.add('h');
+	tree.add('i');
+	tree.add('g');
+	tree.add('m');
+	tree.add('o');
 
 	cout << "The height of the tree is " << tree.height() << endl;
 	cout << endl;

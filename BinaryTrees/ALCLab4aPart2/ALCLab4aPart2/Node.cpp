@@ -1,0 +1,16 @@
+#include "Node.h"
+#include <iostream>
+
+Node::Node(int dataIn){
+	data = dataIn;
+}
+
+
+int Node::isLeaf(){
+	if (this->left == NULL && this->right == NULL) {
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
