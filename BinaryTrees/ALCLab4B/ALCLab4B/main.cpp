@@ -19,17 +19,21 @@ int main() {
 	cout << "The height of the tree is " << tree.height() << endl;
 	cout << endl;
 
-	cout << "Searching for charater: ";
-	tree.search('a');
+	cout << "Searching for integer: ";
+	tree.search(6);
 	cout << endl;
 
 	cout << "Printing characters in order traversal" << endl;
 	tree.inOrder();
 	cout << endl;
 
-	cout << "Printing Min Value in Binary Search Tree" << endl;
-	tree.minValue();
+	cout << "Printing min value in binary search tree: " << tree.minValue() << endl;
 	cout << endl;
+
+	cout << "Printing max value in binary search tree: " << tree.maxValue() << endl;
+	cout << endl;
+
+	cout << "Is a BST: " << tree.isBST() << endl;
 
 	system("pause");
 	return 0;
