@@ -1,0 +1,17 @@
+﻿  Source.cpp
+c:\college\4thyear\semester8\alc\labs\binarytrees\templatedbst\templatedbst\binarysearchtree.h(44): warning C4102: 'std': unreferenced label
+  c:\college\4thyear\semester8\alc\labs\binarytrees\templatedbst\templatedbst\binarysearchtree.h(36): note: while compiling class template member function 'void BinarySearchTree<int>::removeSubtree(Node<T> *)'
+          with
+          [
+              T=int
+          ]
+  c:\college\4thyear\semester8\alc\labs\binarytrees\templatedbst\templatedbst\binarysearchtree.h(32): note: see reference to function template instantiation 'void BinarySearchTree<int>::removeSubtree(Node<T> *)' being compiled
+          with
+          [
+              T=int
+          ]
+  c:\college\4thyear\semester8\alc\labs\binarytrees\templatedbst\templatedbst\binarysearchtree.h(26): note: while compiling class template member function 'BinarySearchTree<int>::BinarySearchTree(void)'
+  c:\college\4thyear\semester8\alc\labs\binarytrees\templatedbst\templatedbst\source.cpp(5): note: see reference to function template instantiation 'BinarySearchTree<int>::BinarySearchTree(void)' being compiled
+  c:\college\4thyear\semester8\alc\labs\binarytrees\templatedbst\templatedbst\source.cpp(5): note: see reference to class template instantiation 'BinarySearchTree<int>' being compiled
+c:\college\4thyear\semester8\alc\labs\binarytrees\templatedbst\templatedbst\binarysearchtree.h(142): warning C4715: 'BinarySearchTree<int>::search': not all control paths return a value
+  TemplatedBST.vcxproj -> C:\College\4thYear\Semester8\ALC\Labs\BinaryTrees\TemplatedBST\Debug\TemplatedBST.exe
