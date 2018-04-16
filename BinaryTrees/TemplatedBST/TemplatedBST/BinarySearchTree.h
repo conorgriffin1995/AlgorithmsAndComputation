@@ -11,12 +11,16 @@ public:
 	bool isEmpty() const;
 	void remove(T dataIn);
 	void print_inOrder();
+	T maxValue();
+	T minValue();
 private:
 	void removeSubtree(Node<T> *subtreeroot);
 	void insert(Node<T> *subtreeRoot, T dataIn);
 	bool search(Node<T> *subtreeRoot, T dataIn);
 	void remove(Node<T> *subtreeRoot, T dataIn);
 	void inOrder(Node<T> *subtreeRoot);
+	T maxValue(Node<T> *subtreeRoot);
+	T minValue(Node<T> *subtreeRoot);
 private:
 	Node<T> *root;
 };
@@ -29,7 +33,7 @@ BinarySearchTree<T>::BinarySearchTree() {
 // Destructor
 template<class T>
 BinarySearchTree<T>::~BinarySearchTree() {
-	removeSubtree(root);
+	if (root) delete root;
 }
 // destroy nodes and delete root
 template<class T>
@@ -167,4 +171,46 @@ void BinarySearchTree<T>::remove(T dataIn) {
 template<class T>
 void BinarySearchTree<T>::remove(Node<T> *subtreeRoot, T dataIn) {
 
+}
+
+// Get Max Value in tree
+template<class T>
+T BinarySearchTree<T>::maxValue() {
+	return maxValue(root);
+}
+// Max means you go right in the tree
+template<class T>
+T BinarySearchTree<T>::maxValue(Node<T> *subtreeRoot) {
+	if (subtreeRoot != NULL) {
+		if (subtreeRoot->isLeaf()) {
+			return subtreeRoot->data;
+		}
+		else if (subtreeRoot->right == NULL) {
+			return subtreeRoot->data;
+		}
+		else {
+			return maxValue(subtreeRoot->right);
+		}
+	}
+}
+
+// Get min value in tree
+template<class T>
+T BinarySearchTree<T>::minValue() {
+	return minValue(root);
+}
+// go left in tree
+template<class T>
+T BinarySearchTree<T>::minValue(Node<T> *subtreeRoot) {
+	if (subtreeRoot != NULL) {
+		if (subtreeRoot->isLeaf()) {
+			return subtreeRoot->data;
+		}
+		else if (subtreeRoot->left == NULL) {
+			return subtreeRoot->data;
+		}
+		else {
+			return minValue(subtreeRoot->left);
+		}
+	}
 }

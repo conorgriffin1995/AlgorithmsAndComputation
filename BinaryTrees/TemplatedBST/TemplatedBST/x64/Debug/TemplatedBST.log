@@ -1,0 +1,5 @@
+﻿  Source.cpp
+c:\college\4thyear\semester8\alc\labs\binarytrees\templatedbst\templatedbst\binarysearchtree.h(146): warning C4715: 'BinarySearchTree<int>::search': not all control paths return a value
+c:\college\4thyear\semester8\alc\labs\binarytrees\templatedbst\templatedbst\binarysearchtree.h(195): warning C4715: 'BinarySearchTree<int>::maxValue': not all control paths return a value
+c:\college\4thyear\semester8\alc\labs\binarytrees\templatedbst\templatedbst\binarysearchtree.h(216): warning C4715: 'BinarySearchTree<int>::minValue': not all control paths return a value
+  TemplatedBST.vcxproj -> C:\College\4thYear\Semester8\ALC\Labs\BinaryTrees\TemplatedBST\x64\Debug\TemplatedBST.exe

@@ -10,7 +10,7 @@ int main() {
 	tree1.insert(3);
 	tree1.insert(1);
 
-	if (tree1.search(22) == true) {
+	if (tree1.search(9) == true) {
 		cout << "FOUND";
 	}
 	else {
@@ -23,7 +23,8 @@ int main() {
 	tree1.print_inOrder();
 
 	cout << endl;
-
+	cout << "MAX: " << tree1.maxValue() << endl;
+	cout << "MIN: " << tree1.minValue() << endl;
 	//tree1.~BinarySearchTree();
 
 	cout << endl;
