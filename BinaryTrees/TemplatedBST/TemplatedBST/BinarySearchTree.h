@@ -17,7 +17,7 @@ private:
 	void removeSubtree(Node<T> *subtreeroot);
 	void insert(Node<T> *subtreeRoot, T dataIn);
 	bool search(Node<T> *subtreeRoot, T dataIn);
-	void remove(Node<T> *subtreeRoot, T dataIn);
+	Node<T>* remove(Node<T> *node, T data)
 	void inOrder(Node<T> *subtreeRoot);
 	T maxValue(Node<T> *subtreeRoot);
 	T minValue(Node<T> *subtreeRoot);
@@ -163,14 +163,63 @@ void BinarySearchTree<T>::inOrder(Node<T> *subtreeRoot) {
 	}
 }
 
-// remove node
 template<class T>
 void BinarySearchTree<T>::remove(T dataIn) {
 	remove(root, dataIn);
 }
 template<class T>
-void BinarySearchTree<T>::remove(Node<T> *subtreeRoot, T dataIn) {
+Node<T>* BinarySearchTree<T>::template<class T>
+void BinarySearchTree<T>::remove(T dataIn) {
+	remove(root, dataIn);
+}
+template<class T>
+Node<T>* BinarySearchTree<T>::remove(Node<T> *node, T data)
+{
+	if (node == NULL)
+	{
+		return node;
+	}
 
+	if (data < node->data)								// left of BST
+	{
+		node->left = remove(node->left, data);
+	}
+	else if (data > node->data)							// right of BST
+	{
+		node->right = remove(node->right, data);
+	}
+	else												// same as root's key
+	{
+		if (node->left == NULL)							// left child case
+		{
+			Node<T> *temp = node->right;
+			free(node);									// Deallocate memory block
+			return temp;
+		}
+		else if (node->right == NULL)					// right child case
+		{
+			Node<T> *temp = node->left;
+			free(node);									// Deallocate memory block
+			return temp;
+		}
+
+		Node<T> *temp = minValueNode(node->right);	// both children case
+		node->data = temp->data;
+		node->right = remove(node->right, temp->data);
+	}
+	return node;
+}
+
+template<class T>
+Node<T>* BinarySearchTree<T>::minValueNode(Node<T> *node)
+{
+	Node<T> *current = node;
+
+	while (current->left != NULL)
+	{
+		current = current->left;
+	}
+	return current;
 }
 
 // Get Max Value in tree
