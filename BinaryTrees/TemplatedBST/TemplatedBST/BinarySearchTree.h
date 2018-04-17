@@ -21,7 +21,8 @@ private:
 	void inOrder(Node<T> *subtreeRoot);
 	T maxValue(Node<T> *subtreeRoot);
 	T minValue(Node<T> *subtreeRoot);
-private:
+	
+	Node<T>* minValueNode(Node<T> *node);
 	Node<T> *root;
 };
 
